@@ -1,0 +1,14 @@
+<h2>Ejercicio1</h2>
+
+<label>Ingrese edad 1:</label><br>
+<input type="number" [(ngModel)]="edadUno"/><br>
+
+<label>Ingrese edad 2:</label><br>
+<input type="number" [(ngModel)]="edadDos"/>
+
+<br>
+
+<button (click)="Promedio()">Calcular Promedio</button> <button (click)="LimpiarForm()">Limpiar Formulario</button>
+
+<h1> El promedio es {{promedio}}</h1>
+

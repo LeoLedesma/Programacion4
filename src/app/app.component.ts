@@ -18,25 +18,9 @@ export class AppComponent {
   imagen: string = '../assets/Screenshot_1.png'
 //#endregion
 
-  edadUno:number = 0;
-  edadDos:number = 0;
-  promedio:number = 0;
-  
-
   Sumar(){
     this.resultado = this.numero1 + Number(this.numero2);
   }
-
-  Promedio(){
-    this.promedio = (this.edadUno+this.edadDos)/2;
-  }
-
-  LimpiarForm(){
-    this.edadUno = 0;
-    this.edadDos = 0;
-    this.promedio = 0;
-  }
-
 
   cambiarTitulo (tituloNuevo: any){
     this.titulo = tituloNuevo;
