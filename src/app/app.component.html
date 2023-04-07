@@ -1,28 +1,9 @@
-<!-- Apuntes clase 1 -->
+<div class="row container mt-4">
+    <div class="col-3">
+       <app-sidebar></app-sidebar>
+    </div>
 
-<h1>Primera app de angular corriendo - {{titulo}}</h1>
-<!--<input [(ngModel)]="variableInput"/> --> <!--  Es un doble bindeo -->
-
-<!-- <p>{{variableInput}}</p>
-
-<button (click)="variableInput = 'hola'">Saludar</button>
-
-
-<input type="number" [(ngModel)]="numero1"/>
-<input type="number" [(ngModel)]="numero2"/>
-<button (click)="Sumar()">Sumar</button>
-
-<p>Resultado = {{resultado}}</p>
-
-<hr/>
-
-<img [src]="imagen"> -->
-
-<!-- [] Todo lo que va dentro de las comillas es Javascript, si quiero agregar texto, agrego comiilas simples/dobles dependiendo que haya ingresado primero -->
-
-
-<app-ejercicio1></app-ejercicio1>
-
-<hr>
-
-<app-ejercicio2></app-ejercicio2>
+    <div class="col">
+       <router-outlet></router-outlet>
+    </div>
+</div>

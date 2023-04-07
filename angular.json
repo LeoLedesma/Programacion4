@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primera-app-angular": {
+    "paisesApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/primera-app-angular",
+            "outputPath": "dist/paises-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -51,13 +51,7 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -66,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "primera-app-angular:build:production"
+              "browserTarget": "paisesApp:build:production"
             },
             "development": {
-              "browserTarget": "primera-app-angular:build:development"
+              "browserTarget": "paisesApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primera-app-angular:build"
+            "browserTarget": "paisesApp:build"
           }
         },
         "test": {

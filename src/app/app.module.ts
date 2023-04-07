@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
-import { LoginComponent } from './components/login/login.component';
-import { ErrorComponent } from './components/error/error.component';
-import { Ejercicio1Component } from './components/ejercicio1/ejercicio1.component';
-import { Ejercicio2Component } from './components/ejercicio2/ejercicio2.component';
-
-
+import { SharedModule } from './shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
+import { Ejercicio1Component } from './Clase-1/ejercicio1/ejercicio1.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { Ejercicio2Module } from './Clase-1/ejercicio2/ejercicio2.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BienvenidoComponent,
-    LoginComponent,
-    ErrorComponent,
     Ejercicio1Component,
-    Ejercicio2Component,
+    InicioComponent
   ],
-  imports: [BrowserModule,
-    FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,    
+    SharedModule,
+    FormsModule,
+    Ejercicio2Module        
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
