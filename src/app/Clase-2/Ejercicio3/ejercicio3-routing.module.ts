@@ -16,9 +16,9 @@ const routes:Routes = [
         //se declara el / de ingreso, y dentro otro <router-outlet></router-outlet> 
         path:'', component: IndexComponent,
         children:[
+        {path: '', component: BienvenidoComponent},
         {path: 'bienvenido',component: BienvenidoComponent},
         {path:'login',component: LoginComponent},
-        {path:'registro',component: LoginComponent},
         {path:'error',component: ErrorComponent}, 
         {path:'**',redirectTo:'error'}                       
         ]
