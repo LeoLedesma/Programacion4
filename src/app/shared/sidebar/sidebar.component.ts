@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styles:[`
-  li,h2 {
-    cursor: pointer;
-  }
-  `]  
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  
+
+  swap(evento:MouseEvent)
+  {
+    console.log(evento)
+  }
 
 }

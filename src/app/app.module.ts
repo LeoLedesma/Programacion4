@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { AppRoutingModule } from './app-routing.module';
+
 import { Ejercicio1Component } from './Clase-1/ejercicio1/ejercicio1.component';
+import { AppRoutingModule } from './app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
-import { Ejercicio2Module } from './Clase-1/ejercicio2/ejercicio2.module';
+import { Clase2RoutingModule } from './Clase-2/clase-2-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +19,10 @@ import { Ejercicio2Module } from './Clase-1/ejercicio2/ejercicio2.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,    
-    SharedModule,
-    FormsModule,
-    Ejercicio2Module        
+    FormsModule,   
+    AppRoutingModule,  
+    SharedModule,    
+    Clase2RoutingModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]
