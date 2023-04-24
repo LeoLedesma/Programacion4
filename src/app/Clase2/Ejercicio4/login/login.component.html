@@ -1,0 +1,28 @@
+<div class="login">
+	<div class="contenedor">
+		<h2>{{titulo}}</h2>
+		<form id="forma" name="forma" (ngSubmit)="accion()">
+			<div class="elemento">
+				<label for="usuario.contraseña">Usuario:</label>
+				<input type="text" [(ngModel)]="usuario.usuario" name="usuario" required="true" />
+			</div>
+			<div class="elemento">
+				<label>Contraseña:</label>
+				<input type="password" [(ngModel)]="usuario.contrasenia" name="contrasenia" required="true" />
+			</div>		
+			<label *ngIf="modo ==='login'; else registro">¿No tiene una cuenta? <p (click)="cambiarModo()">{{enlace}}</p></label>
+			<ng-template #registro>
+				<div class="elemento">
+					<label>Repita la contraseña:</label>
+					<input type="password" [(ngModel)]="contrasenia2" name="contrasenia2" required="true" />
+				</div>		
+				<label>¿Tiene una cuenta? <p (click)="cambiarModo()">{{enlace}}</p></label>
+			</ng-template>
+			<!-- <div #alerta class="alert alert-warning" role="alert">				
+			  </div> -->
+			<div class="elemento">
+				<input type="submit" value="{{titulo}}">
+			</div>
+		</form>
+	</div>
+</div>

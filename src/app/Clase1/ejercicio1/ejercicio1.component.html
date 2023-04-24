@@ -1,0 +1,18 @@
+<h1>Ejercicio 1</h1> 
+
+<div class="row">
+    <div class="col-4">
+        <input type="number" [(ngModel)]="edadUno" placeholder="Ingrese Edad 1" class="form-control" >
+        <input type="number" [(ngModel)]="edadDos" placeholder="Ingrese Edad 2" class="form-control" > 
+    </div>
+    <div class="col-4">
+        <h3>Suma: {{suma}}</h3>
+        <h3>Promedio: {{promedio}}</h3>
+    </div>
+</div>
+
+<div role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary mx-1" (click)="sumar()">Sumar</button>
+    <button type="button" class="btn btn-primary mx-1" (click)="promediar()">Promedio</button>
+    <button type="button" class="btn btn-primary mx-1" (click)="limpiar()">Limpiar</button>
+</div> 
