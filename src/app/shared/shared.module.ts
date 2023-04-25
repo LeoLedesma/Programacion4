@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 import { MenuComponent } from './menu/menu.component';
@@ -21,7 +22,8 @@ import { MenuComponent } from './menu/menu.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

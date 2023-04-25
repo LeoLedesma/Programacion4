@@ -2,94 +2,30 @@
     <a class="navbar-brand" routerLink="" routerLinkActive="active">Proyecto de ejercicios - Leonel Ledesma</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button>    
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Clases</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      <form class="d-flex mt-3" role="search">
+        <input class="form-control me-2" type="search" (keyup)="buscar()" [(ngModel)]="busqueda" name="busqueda" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success"  type="submit">Buscar</button>
+      </form>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" routerLink="" routerLinkActive="active">Inicio/Apuntes</a>
+            <a class="nav-link" aria-current="page" routerLink="" data-bs-dismiss="offcanvas" routerLinkActive="active">Inicio/Apuntes</a>
           </li>          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Clase 1
+          <li *ngFor="let clase of clases" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle show" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+              {{clase.nombre}}
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="clase1/ejercicio1" routerLinkActive="active">Ejercicio 1</a></li>
-              <li><a class="dropdown-item" routerLink="clase1/ejercicio2" routerLinkActive="active">Ejercicio 2</a></li>
-              <!-- <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" >Something else here</a></li> -->
+              <li *ngFor="let ejercicio of clase.ejercicios"><a class="dropdown-item" routerLink="{{clase.uri}}/{{ejercicio.uri}}" data-bs-dismiss="offcanvas" routerLinkActive="active">{{ejercicio.nombre}}</a></li>              
             </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Clase 2
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="clase2/ejercicio3" routerLinkActive="active">Ejercicio 3</a></li>
-              <li><a class="dropdown-item" routerLink="clase2/ejercicio4" routerLinkActive="active">Ejercicio 4</a></li>
-              <!-- <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" >Something else here</a></li> -->
-            </ul>
-          </li>
+          </li>          
         </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>  
 </nav>
-<!-- 
-<nav class="navbar navbar-dark bg-dark p-3">
-  <div class="container-fluid">
-    <button class="navbar-toggler" (click)="swap($event)" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarNavDropdown"
-      aria-controls="sidebarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class=" collapse navbar-collapse" id="sidebarNavDropdown">
-      <ul class="navbar-nav ms-auto ">
-        <li class="nav-item">
-          <a class="nav-link mx-2 active" aria-current="page" routerLink="" routerLinkActive="active">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link mx-2 dropdown-toggle"  id="Clase1" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Clase 1
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li routerLink="clase1/ejercicio1" routerLinkActive="active"><a class="dropdown-item">Ejercicio 1</a></li>
-            <li routerLink="clase1/ejercicio2" routerLinkActive="active"><a class="dropdown-item">Ejercicio 2</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link mx-2 dropdown-toggle"  id="Clase2" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Clase 2
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li routerLink="clase2/ejercicio3" routerLinkActive="active"><a class="dropdown-item">Ejercicio 2</a></li>
-            <li routerLink="clase2/ejercicio4" routerLinkActive="active"><a class="dropdown-item">Ejercicio 3</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link mx-2 dropdown-toggle"  id="Clase2" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Clase 3
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" >Ejercicio 4</a></li>
-            <li><a class="dropdown-item" >Ejercicio 5</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->

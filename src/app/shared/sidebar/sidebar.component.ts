@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../shared.service';
+import { Clase } from '../shared.interface';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +9,16 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   
+  clases:Clase[] = [];
+  sideDeBarOpen:boolean = false;
+  busqueda:string = '';
 
-  swap(evento:MouseEvent)
-  {
-    console.log(evento)
-  }
+ constructor(private sharedService:SharedService){
+  this.clases = [...sharedService.Clases];
+ }
 
+ buscar()
+ {
+   this.clases = [...this.sharedService.busqueda(this.busqueda)];
+ }
 }
